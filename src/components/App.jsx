@@ -7,13 +7,13 @@ import { Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div>
-      <NavBar/>
-      {/* <div>
+      <NavBar />
+      <div>
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/tap' component={TapList}/>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/tap' component={TapList} />
         </Switch>
-      </div> */}
+      </div>
     </div>
   );
 }
