@@ -8,12 +8,12 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <div>
+      {/* <div>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/tap' component={TapList}/>
         </Switch>
-      </div>
+      </div> */}
     </div>
   );
 }

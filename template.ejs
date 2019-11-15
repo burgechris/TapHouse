@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title><%= htmlWebpackPlugin.options.title %></title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </head>
-    <body>
-        <% if (htmlWebpackPlugin.options.appMountId) { %>
-            <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
-        <% } %>
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<title><%= htmlWebpackPlugin.options.title %>Tap House</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"/>
+	</head>
+	<body>
+		<% if (htmlWebpackPlugin.options.appMountId) { %>
+		<div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+		<% } %>
+	</body>
 </html>
