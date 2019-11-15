@@ -10,7 +10,7 @@ function Tap(props) {
         <div className="card-image">
           <img src={props.img} />
           <span className="card-title">{props.name}</span>
-          <Link to="/sell" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></Link>
+          <Link to="/sell" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">+</i></Link>
         </div>
         <div className="card-content">
           <li>{props.brand}</li>
