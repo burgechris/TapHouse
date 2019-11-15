@@ -5,19 +5,17 @@ import { Link } from 'react-router-dom';
 
 function Tap(props) {
   return (
-    <div className="row">
-      <div className="col s12 m6 l4">
-        <div className="card">
-          <div className="card-image">
-            <img src="{props.img}" />
-            <span className="card-title">{props.name}</span>
-            <a to="/sell" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></a>
-          </div>
-          <div className="card-content">
-            <li>{props.brand}</li>
-            <li>{props.price}</li>
-            <li>{props.abv}</li>
-          </div>
+    <div className="col s12 m6 l4">
+      <div className="card">
+        <div className="card-image">
+          <img src={props.img} />
+          <span className="card-title">{props.name}</span>
+          <Link to="/sell" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></Link>
+        </div>
+        <div className="card-content">
+          <li>{props.brand}</li>
+          <li>{props.price}</li>
+          <li>{props.abv}</li>
         </div>
       </div>
     </div>
@@ -25,6 +23,7 @@ function Tap(props) {
 }
 
 Tap.propTypes = {
+  img: PropTypes.element,
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.string,

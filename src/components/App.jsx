@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <div>
+      <div className="row">
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/tap' component={TapList} />
