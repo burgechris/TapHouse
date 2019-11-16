@@ -8,6 +8,7 @@ function App() {
   return (
     <div>
       <NavBar />
+      <HomeImg />
       <div className="row">
         <Switch>
           <Route exact path='/' component={Home} />
