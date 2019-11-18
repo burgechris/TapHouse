@@ -6,7 +6,7 @@
 
 ## Description
 
-__
+_This web application allows customers to view taproom beer choices and it will eventually allow employees to add and sell beer._
 
 ## Setup/Installation Requirements
 
