@@ -23,7 +23,7 @@ function Tap(props) {
 }
 
 Tap.propTypes = {
-  img: PropTypes.element,
+  img: PropTypes.string,
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.string,

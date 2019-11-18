@@ -2,7 +2,7 @@ import React from 'react';
 import Tap from './Tap';
 import Stout from '../assets/img/stout.jpg';
 
-var tapList = [
+var masterTapList = [
   {
     img: Stout,
     name: 'Stout',
@@ -30,7 +30,7 @@ function TapList() {
   return (
     <div className="container">
       <div className="row">
-        {tapList.map((tap, index) => (
+        {masterTapList.map((tap, index) => 
           <Tap
             img={tap.img}
             name={tap.name}
@@ -39,7 +39,7 @@ function TapList() {
             abv={tap.abv}
             key={index}
           />
-        ))}
+        )}
       </div>
     </div>
   );
