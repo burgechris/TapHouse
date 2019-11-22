@@ -10,18 +10,39 @@ function NewTapForm(props) {
 
   function handleNewTapFormSubmission(event) {
     event.preventDefault();
-    props.onNewTap({name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value});
+    props.onNewTap({name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, image: _img.value});
   }
 
   return (
-    <div class="row">
-      <form onSubmit={handleNewTapFormSubmission} class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="Placeholder" id="name" type="text" class="validate"/>
+    <div className="row">
+      <form onSubmit={handleNewTapFormSubmission} className="col s12">
+        <div className="row">
+          <div className="input-field col s6">
+            <input placeholder="Placeholder" id="brand" type="text" className="validate" ref={(input) => { _brand = input; }} />
+            <label for="brand">Brand</label>
+          </div>    
+          <div className="input-field col s6">
+            <input placeholder="Placeholder" id="name" type="text" className="validate" ref={(input) => { _name = input; }}/>
             <label for="name">Name</label>
           </div>    
         </div>
+        <div className="row">
+          <div className="input-field col s6">
+            <input placeholder="Placeholder" id="price" type="text" className="validate" ref={(input) => { _price = input; }} />
+            <label for="price">Price</label>
+          </div>
+          <div className="input-field col s6">
+            <input placeholder="Placeholder" id="abv" type="text" className="validate" ref={(input) => { _abv = input; }} />
+            <label for="abv">ABV</label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12">
+            <input placeholder="Placeholder" id="img" type="text" className="validate" ref={(input) => { _img = input; }} />
+            <label for="img">Image</label>
+          </div>
+        </div>
+        <button className="btn waves-effect waves-light" type="submit" name="action">Submit<i className="material-icons right">send</i></button>
       </form>
     </div>
   );

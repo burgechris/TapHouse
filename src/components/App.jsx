@@ -32,7 +32,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/tap' render={() => <TapList tapList={this.state.mainTapList} />} />
-            <Route path='newtap' render{() => <NewTapForm onNewTap={}/>}
+            <Route path='/newtap' render{(props) => <NewTapForm onNewTap={this.props.onNewTap}/>} />
             <Route component={Error404} />
           </Switch>
         </div>
