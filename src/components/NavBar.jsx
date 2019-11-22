@@ -21,7 +21,7 @@ function NavBar() {
           <Link style={titleStyle} className="brand-logo" to="/">Brews and Barks</Link>
           <ul style={listMargin} id="nav-mobile" className="right hide-on-med-and-down">
             <li><Link style={listStyle} to="/tap">Tap List</Link></li>
-            <li><Link style={listStyle} to="/new">Add New</Link></li>
+            <li><Link style={listStyle} to="/newtap">Add New</Link></li>
           </ul>
         </div>
       </nav>

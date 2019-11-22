@@ -1,4 +1,4 @@
-import React from '.react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 function NewTapForm(props) {
@@ -10,7 +10,7 @@ function NewTapForm(props) {
 
   function handleNewTapFormSubmission(event) {
     event.preventDefault();
-    props.onNewTap({name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, image: _img.value});
+    props.onNewTap({ name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, image: _img.value });
   }
 
   return (
@@ -18,31 +18,26 @@ function NewTapForm(props) {
       <form onSubmit={handleNewTapFormSubmission} className="col s12">
         <div className="row">
           <div className="input-field col s6">
-            <input placeholder="Placeholder" id="brand" type="text" className="validate" ref={(input) => { _brand = input; }} />
-            <label for="brand">Brand</label>
-          </div>    
+            <input placeholder="Brand" id="brand" type="text" className="validate" ref={(input) => { _brand = input; }} />
+          </div>
           <div className="input-field col s6">
-            <input placeholder="Placeholder" id="name" type="text" className="validate" ref={(input) => { _name = input; }}/>
-            <label for="name">Name</label>
-          </div>    
+            <input placeholder="Name" id="name" type="text" className="validate" ref={(input) => { _name = input; }} />
+          </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input placeholder="Placeholder" id="price" type="text" className="validate" ref={(input) => { _price = input; }} />
-            <label for="price">Price</label>
+            <input placeholder="Price" id="price" type="text" className="validate" ref={(input) => { _price = input; }} />
           </div>
           <div className="input-field col s6">
-            <input placeholder="Placeholder" id="abv" type="text" className="validate" ref={(input) => { _abv = input; }} />
-            <label for="abv">ABV</label>
+            <input placeholder="ABV" id="abv" type="text" className="validate" ref={(input) => { _abv = input; }} />
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
-            <input placeholder="Placeholder" id="img" type="text" className="validate" ref={(input) => { _img = input; }} />
-            <label for="img">Image</label>
+            <input placeholder="Image URL" id="img" type="text" className="validate" ref={(input) => { _img = input; }} />
           </div>
         </div>
-        <button className="btn waves-effect waves-light" type="submit" name="action">Submit<i className="material-icons right">send</i></button>
+        <button className="btn waves-effect waves-light" type="submit" name="action">Submit<i className="material-icons right"></i></button>
       </form>
     </div>
   );
@@ -51,5 +46,5 @@ function NewTapForm(props) {
 NewTapForm.propTypes = {
   onNewTap: PropTypes.func
 };
-            
+
 export default NewTapForm;
