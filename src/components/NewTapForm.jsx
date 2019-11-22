@@ -11,6 +11,11 @@ function NewTapForm(props) {
   function handleNewTapFormSubmission(event) {
     event.preventDefault();
     props.onNewTap({ name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, image: _img.value });
+    _name.value='';
+    _brand.value='';
+    _price.value='';
+    _abv.value='';
+    _img.value='';
   }
 
   return (
@@ -37,7 +42,7 @@ function NewTapForm(props) {
             <input placeholder="Image URL" id="img" type="text" className="validate" ref={(input) => { _img = input; }} />
           </div>
         </div>
-        <button className="btn waves-effect waves-light" type="submit" name="action">Submit<i className="material-icons right"></i></button>
+        <button className="btn waves-effect waves-light" type="submit" name="action">Add Tap<i className="material-icons right"></i></button>
       </form>
     </div>
   );
