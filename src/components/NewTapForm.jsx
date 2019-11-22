@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+import { v1 } from 'uuid';
 import PropTypes from 'prop-types';
 
 class NewTapForm extends React.Component {
@@ -12,17 +14,17 @@ class NewTapForm extends React.Component {
     this._brand = null;
     this._price = null;
     this._abv = null;
-    this.handleNewTapFormSubmission.bind(this);
+    this.handleNewTapFormSubmission = this.handleNewTapFormSubmission.bind(this);
   }
 
-handleNewTapFormSubmission(event) {
+  handleNewTapFormSubmission(event) {
     event.preventDefault();
-    this.props.onNewTap({ name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, image: this._img.value });
+    this.props.onNewTap({ name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, image: this._img.value, id: v1() });
     this._name.value='';
-    _brand.value='';
-    _price.value='';
-    _abv.value='';
-    _img.value='';
+    this._brand.value='';
+    this._price.value='';
+    this._abv.value='';
+    this._img.value='';
     this.setState({redirect: true});
   }
 
@@ -30,26 +32,26 @@ handleNewTapFormSubmission(event) {
     return (
       <div className="row">
         { this.state.redirect ? <Redirect to='/' /> : '' }
-        <form onSubmit={handleNewTapFormSubmission} className="col s12">
+        <form onSubmit={this.handleNewTapFormSubmission} className="col s12">
           <div className="row">
             <div className="input-field col s6">
-              <input placeholder="Brand" id="brand" type="text" className="validate" ref={(input) => { _brand = input; }} />
+              <input placeholder="Brand" id="brand" type="text" className="validate" ref={(input) => { this._brand = input; }} />
             </div>
             <div className="input-field col s6">
-              <input placeholder="Name" id="name" type="text" className="validate" ref={(input) => { _name = input; }} />
+              <input placeholder="Name" id="name" type="text" className="validate" ref={(input) => { this._name = input; }} />
             </div>
           </div>
           <div className="row">
             <div className="input-field col s6">
-              <input placeholder="Price" id="price" type="text" className="validate" ref={(input) => { _price = input; }} />
+              <input placeholder="Price" id="price" type="text" className="validate" ref={(input) => { this._price = input; }} />
             </div>
             <div className="input-field col s6">
-              <input placeholder="ABV" id="abv" type="text" className="validate" ref={(input) => { _abv = input; }} />
+              <input placeholder="ABV" id="abv" type="text" className="validate" ref={(input) => { this._abv = input; }} />
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input placeholder="Image URL" id="img" type="text" className="validate" ref={(input) => { _img = input; }} />
+              <input placeholder="Image URL" id="img" type="text" className="validate" ref={(input) => { this._img = input; }} />
             </div>
           </div>
           <button className="btn waves-effect waves-light" type="submit" name="action">Add Tap<i className="material-icons right"></i></button>
