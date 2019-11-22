@@ -24,10 +24,10 @@ function Tap(props) {
 
 Tap.propTypes = {
   img: PropTypes.string,
-  name: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.string,
-  abv: PropTypes.string
+  name: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  abv: PropTypes.string.isRequired
 };
 
 export default Tap;
