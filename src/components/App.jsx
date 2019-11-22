@@ -10,8 +10,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainBeerList: {},
-    }
+      mainTapList: {},
+    };
+    this.handleAddingNewTap = this.handleAddingNewTap.bind(this);
+  }
+
+  handleAddingNewTap(newTap) {
+    var newTapId = v1();
+    var newMainTapList = Object.assign({}, this.state.mainTapList, {[newTapId]: newTap});
   }
 
   render() {
@@ -21,7 +27,7 @@ class App extends React.Component {
         <div className="row">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/tap' component={TapList} />
+            <Route path='/tap' render={() => <TapList tapList={this.state.mainTapList} />} />
             <Route component={Error404} />
           </Switch>
         </div>
