@@ -1,6 +1,8 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Home from './Home';
+import Moment from 'moment';
+import { v1 } from 'uuid';
 import TapList from './TapList';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
@@ -16,8 +18,9 @@ class App extends React.Component {
   }
 
   handleAddingNewTap(newTap) {
-    var newTapId = v1();
+    var newTapId = v1()
     var newMainTapList = Object.assign({}, this.state.mainTapList, {[newTapId]: newTap});
+    this.setState({ mainTapList: newMainTapList });
   }
 
   render() {
