@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   handleAddingNewTap(newTap) {
-    var newTapId = v1()
+    var newTapId = v1();
     var newMainTapList = Object.assign({}, this.state.mainTapList, {[newTapId]: newTap});
     this.setState({ mainTapList: newMainTapList });
   }
