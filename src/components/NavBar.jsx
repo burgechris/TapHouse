@@ -18,7 +18,7 @@ function NavBar() {
     <div>
       <nav>
         <div className="nav-wrapper">
-          <Link style={titleStyle} className="brand-logo" to="/">Brews and Barks</Link>
+          <Link style={titleStyle} className="brand-logo" to="/">Crusty Joe's TapHouse ...with pizza</Link>
           <ul style={listMargin} id="nav-mobile" className="right hide-on-med-and-down">
             <li><Link style={listStyle} to="/tap">Tap List</Link></li>
             <li><Link style={listStyle} to="/newtap">Add New</Link></li>

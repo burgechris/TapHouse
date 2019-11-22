@@ -31,7 +31,7 @@ class NewTapForm extends React.Component {
   render() {
     return (
       <div className="row">
-        { this.state.redirect ? <Redirect to='/' /> : '' }
+        { this.state.redirect ? <Redirect to='/tap' /> : '' }
         <form onSubmit={this.handleNewTapFormSubmission} className="col s12">
           <div className="row">
             <div className="input-field col s6">

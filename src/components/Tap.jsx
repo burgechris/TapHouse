@@ -4,9 +4,16 @@ import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 function Tap(props) {
+  var cardStyle = {
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    height: '500px',
+    width: '350px'
+  };
+
   return (
     <div className="col s12 m6 l4">
-      <div className="card">
+      <div style={cardStyle} className="card">
         <div className="card-image">
           <img src={props.img} />
           <span className="card-title">{props.name}</span>
