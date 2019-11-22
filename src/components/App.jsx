@@ -24,6 +24,8 @@ class App extends React.Component {
     this.setState({ mainTapList: newMainTapList });
   }
 
+  // handleSellPint()
+
   render() {
     return (
       <div>
