@@ -4,6 +4,7 @@ import Home from './Home';
 import Moment from 'moment';
 import { v1 } from 'uuid';
 import TapList from './TapList';
+import NewTapForm from './NewTapForm';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 
@@ -31,6 +32,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/tap' render={() => <TapList tapList={this.state.mainTapList} />} />
+            <Route path='newtap' render{() => <NewTapForm onNewTap={}/>}
             <Route component={Error404} />
           </Switch>
         </div>
