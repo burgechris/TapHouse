@@ -6,7 +6,7 @@
 
 ## Description
 
-_This web application allows customers to view taproom beer choices and it will eventually allow employees to add and sell beer._
+_This web application allows the staff of a tap house to add taps to a tap menu, as well as view the menu._
 
 ## Setup/Installation Requirements
 

@@ -5,10 +5,7 @@ import DarkBeer from '../assets/img/beer_dark.jpeg';
 import Bkgrnd from '../assets/img/wood_bkgrnd.jpeg'; 
 
 function TapList(props) {
-  // var tapListStyle = {
-  //   marginTop: '60px'
-  // };
-
+  
   var tapListBackground = {
     backgroundImage: `url(${Bkgrnd})`,
     backgroundAttachment: 'fixed',
