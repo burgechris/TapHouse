@@ -8,11 +8,10 @@ function Tap(props) {
     marginLeft: 'auto',
     height: '500px',
     width: '350px'
-  }
+  };
 
-  function sellPint() {
-    var tapId = props.id;
-    props.onMinusPint(tapId);
+  function handleSellPint() {
+    props.sellPint(props.id);
   }
 
   return (
@@ -21,12 +20,13 @@ function Tap(props) {
         <div className="card-image">
           <img src={props.img} />
           <span className="card-title">{props.name}</span>
-          <button type="click" onClick={sellPint} className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">-</i></button>
+          <button onClick={handleSellPint} className="btn-floating halfway-fab waves-effect waves-light red material-icons">Sell</button>
         </div>
         <div className="card-content">
           <li>{props.brand}</li>
-          <li>{props.price}</li>
-          <li>{props.abv}</li>
+          <li>Price: ${props.price}</li>
+          <li>ABV: {props.abv}%</li>
+          <li>Pints Left: {props.pints}</li>
         </div>
       </div>
     </div>
@@ -39,8 +39,9 @@ Tap.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   abv: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  onMinusPint: PropTypes.func
+  pints: PropTypes.number,
+  id: PropTypes.number,
+  sellPint: PropTypes.func
 };
 
 export default Tap;

@@ -14,12 +14,13 @@ class NewTapForm extends React.Component {
     this._brand = null;
     this._price = null;
     this._abv = null;
+    this._pints = 124;
     this.handleNewTapFormSubmission = this.handleNewTapFormSubmission.bind(this);
   }
 
   handleNewTapFormSubmission(event) {
     event.preventDefault();
-    this.props.onNewTap({ name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, image: this._img.value, id: v1() });
+    this.props.onNewTap({ name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, image: this._img.value, pints: this._pints, id: v1() });
     this._name.value='';
     this._brand.value='';
     this._price.value='';

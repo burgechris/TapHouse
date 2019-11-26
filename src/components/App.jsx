@@ -16,7 +16,7 @@ class App extends React.Component {
       mainTapList: [],
     };
     this.handleAddingNewTap = this.handleAddingNewTap.bind(this);
-    this.handleTapSubtract = this.handleTapSubtract.bind(this);
+    this.handleSellPint = this.handleSellPint.bind(this);
   }
 
   handleAddingNewTap(newTap) {
@@ -26,13 +26,12 @@ class App extends React.Component {
     this.setState({ mainTapList: newMainTapList });
   }
 
-  handleSellPint(tapId) {
-    var newMainTapList = this.state.mainTapList.slice();
-    for(i = 0; i < newMainTapList.length; i++) {
-      if(newMainTapList[i].id === tapId) {
-        
-      }
-    }
+  handleSellPint(id) {
+    var newMainTapList = this.state.mainTapList;
+    newMainTapList[id].pints --;
+    // eslint-disable-next-line no-console
+    console.log(newMainTapList[id].pints);
+    this.setState({mainTapList: newMainTapList });
   }
 
   render() {
@@ -42,7 +41,7 @@ class App extends React.Component {
         <div className="row">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/tap' render={() => <TapList tapList={this.state.mainTapList} />} />
+            <Route path='/tap' render={() => <TapList tapList={this.state.mainTapList} sellPint={this.handleSellPint} />} />
             <Route path='/newtap' render={() => <NewTapForm onNewTap={this.handleAddingNewTap}/>} />
             <Route component={Error404} />
           </Switch>
