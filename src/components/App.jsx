@@ -13,18 +13,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainTapList: {},
+      mainTapList: [],
     };
     this.handleAddingNewTap = this.handleAddingNewTap.bind(this);
+    this.handleTapSubtract = this.handleTapSubtract.bind(this);
   }
 
   handleAddingNewTap(newTap) {
     var newTapId = v1();
-    var newMainTapList = Object.assign({}, this.state.mainTapList, {[newTapId]: newTap});
+    var newMainTapList = this.state.mainTapList.slice();
+    newMainTapList.push(newTap);
     this.setState({ mainTapList: newMainTapList });
   }
 
-  // handleSellPint()
+  handleSellPint(tapId) {
+    var newMainTapList = this.state.mainTapList.slice();
+    for(i = 0; i < newMainTapList.length; i++) {
+      if(newMainTapList[i].id === tapId) {
+        
+      }
+    }
+  }
 
   render() {
     return (

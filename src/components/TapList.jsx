@@ -18,24 +18,25 @@ function TapList(props) {
   return (
     <div style={tapListBackground}>
       <div className="row">
-        {Object.keys(props.tapList).map(function (tapId) {
-          var tap = props.tapList[tapId];
-          return <Tap
+        {props.tapList.map((tap) =>
+          <Tap
             img={DarkBeer}
             name={tap.name}
             brand={tap.brand}
             price={tap.price}
             abv={tap.abv}
-            key={tapId}
-            tapId={tapId} />;
-        })}
+            id={tap.id}
+            key={tap.id}
+            onMinusPint={props.onMinusPint} />
+        )}
       </div>
     </div>
   );
 }
 
 TapList.propTypes = {
-  tapList: PropTypes.object,
+  tapList: PropTypes.array,
+  onMinusPint: PropTypes.func
 };
 
 export default TapList;
